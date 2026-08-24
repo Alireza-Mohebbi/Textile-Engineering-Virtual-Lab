@@ -1,6 +1,6 @@
 ## About the Project 
 
-This software allows users to model a 2D weave structure including its cross section and assigne mechanical and physical properties. Based on the modeled geometry and assigned properties, the software aims to provide approximate predictions of the weave's mechanical behavior and generate useful mechanical plots.
+This software allows users to model a 2D weave structure including its cross section and assign mechanical and physical properties to it. Based on the modeled geometry and assigned properties, the software provides approximate predictions of the weave's mechanical behavior and generates useful mechanical plots.
 
 ## 🚧 Under development
 
