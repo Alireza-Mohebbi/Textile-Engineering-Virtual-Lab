@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
 
             if (weaveDesigner.ShowDialog() == DialogResult.OK)
             {
-                Weave = weaveDesigner.Weave;
+                Weave = weaveDesigner.NewWeave;
                 float scale;
 
                 if (Weave.WarpCount > Weave.WeftCount)
@@ -41,6 +41,8 @@ namespace WindowsFormsApplication1
                 g.ScaleTransform(scale, scale);
                 g.TranslateTransform(10f, 10f);
 
+                weavePropertiesButton.Enabled = true;
+
                 WeaveRenderer weaveRenderer = new WeaveRenderer();
                 weaveRenderer.Draw(Weave, g);
             }
@@ -52,7 +54,7 @@ namespace WindowsFormsApplication1
             g.Clear(Color.White);
             g.ScaleTransform(0.5f, 0.5f);
 
-            switch (plotTypesComboBox.SelectedIndex)
+            switch (plotTypeComboBox.SelectedIndex)
             {
                 case 1 :
                     IPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
@@ -72,7 +74,7 @@ namespace WindowsFormsApplication1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(plotTypesComboBox.SelectedIndex)
+            switch(plotTypeComboBox.SelectedIndex)
             {
                 // Stress-Strain inputs setting
                 case 0 :
@@ -80,7 +82,6 @@ namespace WindowsFormsApplication1
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-
                     inputLabel1.Text = "Stress 1";
                     inputLabel2.Text = "Strain 1";
                     inputLabel3.Text = "Stress 2";
@@ -92,7 +93,6 @@ namespace WindowsFormsApplication1
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-
                     inputLabel1.Text = "Bending Moment 1";
                     inputLabel2.Text = "Curvature 1";
                     inputLabel3.Text = "Bending Moment 2";
@@ -104,7 +104,6 @@ namespace WindowsFormsApplication1
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-
                     inputLabel1.Text = "Shear Stress 1";
                     inputLabel2.Text = "Shear Strain 1";
                     inputLabel3.Text = "Shear Stress 2";
@@ -116,7 +115,6 @@ namespace WindowsFormsApplication1
                     input2.Visible = false;
                     input3.Visible = false;
                     input4.Visible = false;
-
                     inputLabel1.Text = "";
                     inputLabel2.Text = "";
                     inputLabel3.Text = "";
@@ -127,7 +125,6 @@ namespace WindowsFormsApplication1
                     input2.Visible = false;
                     input3.Visible = false;
                     input4.Visible = false;
-
                     inputLabel1.Text = "";
                     inputLabel2.Text = "";
                     inputLabel3.Text = "";
@@ -135,17 +132,13 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void clearWeaveButton_Click(object sender, EventArgs e)
-        {
-        }
-
         private void weavePropertiesButton_Click(object sender, EventArgs e)
         {
-            WeavePropertiesConfigurer weavePropertiesConfigurer = new WeavePropertiesConfigurer();
-
+            WeavePropertiesConfigurer weavePropertiesConfigurer = new WeavePropertiesConfigurer(Weave);
             if (weavePropertiesConfigurer.ShowDialog() == DialogResult.OK)
             {
                 Weave = weavePropertiesConfigurer.Weave;
+                plotInputsPanel.Enabled = true;
             }
         }
     }

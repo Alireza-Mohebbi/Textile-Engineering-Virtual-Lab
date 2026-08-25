@@ -5,15 +5,27 @@ namespace WindowsFormsApplication1.Forms
 {
     public partial class WeavePropertiesConfigurer : Form
     {
-        public Weave Weave { get; set; }
+        public Weave Weave { get; private set; }
 
-        public WeavePropertiesConfigurer()
+        public WeavePropertiesConfigurer(Weave weave)
         {
             InitializeComponent();
+            Weave = weave;
         }
 
-        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        private void applyButton_Click(object sender, System.EventArgs e)
         {
+            Weave.YoungsModulusX = (float)youngsModulusXInput.Value;
+            Weave.YoungsModulusY = (float)youngsModulusYInput.Value;
+            Weave.FabricArialDensity = (float)arialDensityInput.Value;
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void Header_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

@@ -37,19 +37,12 @@
         {
             WarpCount = warps;
             WeftCount = wefts;
-
-            YoungsModulusX = 10;
-            YoungsModulusY = 10;
-
-            FabricArialDensity = 10;
-
             MakeInterlacementMatrix();
         }
 
         private void MakeInterlacementMatrix()
         {
             IsWarpOverWeft = new bool[WarpCount, WeftCount];
-
             for (int i = 0; i < WarpCount; i++)
             {
                 for (int j = 0; j < WeftCount; j++)

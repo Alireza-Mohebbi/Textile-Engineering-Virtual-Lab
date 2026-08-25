@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 {
     public partial class WeaveDesigner : Form
     {
-        public Weave Weave { get; set; }
+        public Weave NewWeave { get; set; }
         private Rectangle[,] interactiveIntersectionsOfWeave;
         private const int marginFromScreenCoord = 50;
 
@@ -23,29 +23,29 @@ namespace WindowsFormsApplication1
 
         private void weaveButton_Click(object sender, EventArgs e)
         {
-            Weave = new Weave((int)warpCountInput.Value, (int)weftCountInput.Value);
-
-            Weave.YarnThickness = (int)yarnThicknessInput.Value;
-            Weave.YarnWidth = (int)yarnWidthInput.Value;
-            Weave.YarnSpacing = (int)yarnSpacingInput.Value;
-            Weave.RepeatX = (int)repeatXInput.Value;
-            Weave.RepeatY = (int)repeatYInput.Value;
-
+            NewWeave = new Weave((int)warpCountInput.Value, (int)weftCountInput.Value);
+            NewWeave.YarnThickness = (int)yarnThicknessInput.Value;
+            NewWeave.YarnWidth = (int)yarnWidthInput.Value;
+            NewWeave.YarnSpacing = (int)yarnSpacingInput.Value;
+            NewWeave.RepeatX = (int)repeatXInput.Value;
+            NewWeave.RepeatY = (int)repeatYInput.Value;
             DefineInteractiveIntersectionsOfWeave();
+
+            insertWeaveButton.Enabled = true;
 
             Invalidate();
         }
 
         private void DefineInteractiveIntersectionsOfWeave()
         {
-            interactiveIntersectionsOfWeave = new Rectangle[Weave.WarpCount, Weave.WeftCount];
+            interactiveIntersectionsOfWeave = new Rectangle[NewWeave.WarpCount, NewWeave.WeftCount];
 
-            for (int i = 0; i < Weave.WarpCount; i++)
+            for (int i = 0; i < NewWeave.WarpCount; i++)
             {
-                for (int j = 0; j < Weave.WeftCount; j++)
+                for (int j = 0; j < NewWeave.WeftCount; j++)
                 {
-                    int x = marginFromScreenCoord + i * Weave.YarnSpacing;
-                    int y = marginFromScreenCoord + j * Weave.YarnSpacing;
+                    int x = marginFromScreenCoord + i * NewWeave.YarnSpacing;
+                    int y = marginFromScreenCoord + j * NewWeave.YarnSpacing;
                     interactiveIntersectionsOfWeave[i, j] = new Rectangle(x - 15, y - 15, 30, 30);
                 }
             }
@@ -53,17 +53,17 @@ namespace WindowsFormsApplication1
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Weave == null)
+            if (NewWeave == null)
             {
                 return;
             }
-            for (int x = 0; x < Weave.WarpCount; x++)
+            for (int x = 0; x < NewWeave.WarpCount; x++)
             {
-                for (int y = 0; y < Weave.WeftCount; y++)
+                for (int y = 0; y < NewWeave.WeftCount; y++)
                 {
                     if (interactiveIntersectionsOfWeave[x, y].Contains(e.Location))
                     {
-                        Weave.IsWarpOverWeft[x, y] = !(Weave.IsWarpOverWeft[x, y]);
+                        NewWeave.IsWarpOverWeft[x, y] = !(NewWeave.IsWarpOverWeft[x, y]);
                         Invalidate();
                         return;
                     }
@@ -77,20 +77,13 @@ namespace WindowsFormsApplication1
             e.Graphics.TranslateTransform(marginFromScreenCoord, marginFromScreenCoord);
 
             WeaveRenderer weaveRenderer = new WeaveRenderer();
-            weaveRenderer.Draw(Weave, e.Graphics);
+            weaveRenderer.Draw(NewWeave, e.Graphics);
         }
 
         private void insertWeaveButton_Click(object sender, EventArgs e)
         {
-            if (Weave == null)
-            {
-                MessageBox.Show("Please Make a weave first.");
-            }
-            else
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
