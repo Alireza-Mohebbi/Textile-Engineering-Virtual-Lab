@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1.Plotter
 {
-    public partial class BendingMomentCurvaturePlotter : IPlotter
+    public partial class BendingMomentCurvaturePlotter : AbstractPlotter
     {
         private float moment1, moment2, curvature1, curvature2;
 
@@ -17,7 +18,7 @@ namespace WindowsFormsApplication1.Plotter
             this.curvature2 = curvature2;
         }
 
-        public void Plot(Graphics g)
+        public override void Plot(Graphics g)
         {
             // Curve approximation formula: M = a * c^b
             // M: Moment, C: Curvature, a and b: Experimental constants
@@ -25,22 +26,28 @@ namespace WindowsFormsApplication1.Plotter
             float b = (float)((Math.Log(moment1) - Math.Log(moment2)) / (Math.Log(curvature1) - Math.Log(curvature2)));
             float a = (float)(moment1 / Math.Pow(curvature1, b));
 
-            int pointsCount = 20;
-            PointF[] points = new PointF[pointsCount];
+            List<PointF> points = new List<PointF>();
 
-            for (int c = 0; c < pointsCount; c++)
+            for (int x = 0; x < axesRange; x++)
             {
-                points[c] = new PointF(c, (float)(a * Math.Pow(c, b)));
+                float y = (float)(a * Math.Pow(x, b));
+                if (y > axesRange)
+                {
+                    break;
+                }
+                points.Add(new PointF(x, y));
             }
 
             try
             {
-                using (Pen pen = new Pen(Color.Blue, 1))
+                using (Pen pen = new Pen(Color.Blue, 0.5f))
                 {
                     g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.TranslateTransform(100, 100);
-                    g.ScaleTransform(20, 20);
-                    g.DrawCurve(pen, points);
+                    g.TranslateTransform(margin, margin);
+                    g.ScaleTransform(scale, scale);
+
+                    DrawCoordinateSystem(g, axesRange, "Curvature", "Bending Moment");
+                    g.DrawCurve(pen, points.ToArray());
                 }
             }
             catch (Exception)

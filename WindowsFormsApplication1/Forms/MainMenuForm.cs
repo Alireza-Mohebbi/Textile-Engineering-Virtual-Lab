@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
             switch (plotTypeComboBox.SelectedIndex)
             {
                 case 1 :
-                    IPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
+                    AbstractPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
                     (float)input1.Value,
                     (float)input2.Value,
                     (float)input3.Value,
@@ -65,7 +65,7 @@ namespace WindowsFormsApplication1
                     bendingMomentCurvaturePlotter.Plot(g); break;
 
                 case 3 :
-                    IPlotter drapePlotter = new DrapePlotter(Weave);
+                    AbstractPlotter drapePlotter = new DrapePlotter(Weave);
                     drapePlotter.Plot(g); break;
 
                 default : break;

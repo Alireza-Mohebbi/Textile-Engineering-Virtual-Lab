@@ -6,7 +6,7 @@ using WindowsFormsApplication1.Textiles;
 
 namespace WindowsFormsApplication1.Plotter
 {
-    public partial class DrapePlotter : IPlotter
+    public partial class DrapePlotter : AbstractPlotter
     {
         private Weave weave;
         private float bendingRigidity;
@@ -23,15 +23,15 @@ namespace WindowsFormsApplication1.Plotter
             length = weave.FabricHeight;
         }
 
-        public void Plot(Graphics g)
+        public override void Plot(Graphics g)
         {
             int plotDomainX = 30;
-            PointF[] drapeCurveControlPoints = new PointF[plotDomainX];
+            PointF[] points = new PointF[plotDomainX];
 
             for (int x = 0; x < plotDomainX; x++)
             {
                 float y = ((arialDensity * x * x) / (24 * bendingRigidity)) * ((6 * length * length) - (4 * length * x) + (x * x));
-                drapeCurveControlPoints[x] = new PointF(x, y);
+                points[x] = new PointF(x, y);
             }
 
             try
@@ -40,10 +40,10 @@ namespace WindowsFormsApplication1.Plotter
                 g.TranslateTransform(100, 100);
                 g.ScaleTransform(5f, 5f);
 
-                PointF clampWallStartPoint = new PointF(drapeCurveControlPoints[0].X, drapeCurveControlPoints[0].Y - 20);
-                PointF clampWallEndPoint = new PointF(drapeCurveControlPoints[0].X, drapeCurveControlPoints[0].Y + 20);
+                PointF clampWallStartPoint = new PointF(points[0].X, points[0].Y - 20);
+                PointF clampWallEndPoint = new PointF(points[0].X, points[0].Y + 20);
 
-                g.DrawCurve(Pens.Blue, drapeCurveControlPoints);
+                g.DrawCurve(Pens.Blue, points);
                 g.DrawLine(Pens.Black, clampWallStartPoint, clampWallEndPoint);
             }
             catch (Exception)
