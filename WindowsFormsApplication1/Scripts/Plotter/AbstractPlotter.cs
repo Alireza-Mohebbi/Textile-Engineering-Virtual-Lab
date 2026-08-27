@@ -15,15 +15,18 @@ namespace WindowsFormsApplication1.Plotter
             Pen gridPen = new Pen(Color.LightGray, 0.1f);
 
             // Grid
-            for (int x = -range; x <= range; x++)   // X axis
+            for (int x = -range; x <= range; x++)
+            {
                 g.DrawLine(gridPen, x, -range, x, range);
-
-            for (int y = -range; y <= range; y++)   // Y axis
+            }
+            for (int y = -range; y <= range; y++)
+            {
                 g.DrawLine(gridPen, -range, y, range, y);
+            }
 
             // Axes
-            g.DrawLine(axesPen, -range, 0, range, 0);   // X axis
-            g.DrawLine(axesPen, 0, -range, 0, range);   // Y axis
+            g.DrawLine(axesPen, -range, 0, range, 0);
+            g.DrawLine(axesPen, 0, -range, 0, range);
 
             // Labels
             g.DrawString(labelX, textsFont, Brushes.Black, axesRange * 1.08f, 0);

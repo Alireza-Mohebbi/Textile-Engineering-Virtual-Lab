@@ -78,98 +78,86 @@
             // arialDensityInput
             // 
             this.arialDensityInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.arialDensityInput.DecimalPlaces = 5;
+            this.arialDensityInput.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
             this.arialDensityInput.Location = new System.Drawing.Point(158, 105);
             this.arialDensityInput.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.arialDensityInput.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.arialDensityInput.Name = "arialDensityInput";
             this.arialDensityInput.Size = new System.Drawing.Size(120, 20);
             this.arialDensityInput.TabIndex = 9;
-            this.arialDensityInput.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             // 
             // arialDensityLabel
             // 
             this.arialDensityLabel.AutoSize = true;
             this.arialDensityLabel.Location = new System.Drawing.Point(6, 112);
             this.arialDensityLabel.Name = "arialDensityLabel";
-            this.arialDensityLabel.Size = new System.Drawing.Size(65, 13);
+            this.arialDensityLabel.Size = new System.Drawing.Size(112, 13);
             this.arialDensityLabel.TabIndex = 10;
-            this.arialDensityLabel.Text = "Arial Density";
+            this.arialDensityLabel.Text = "Arial Density (Kg/m^3)";
             // 
             // youngsModulusYInput
             // 
             this.youngsModulusYInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.youngsModulusYInput.DecimalPlaces = 5;
+            this.youngsModulusYInput.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
             this.youngsModulusYInput.Location = new System.Drawing.Point(158, 70);
             this.youngsModulusYInput.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.youngsModulusYInput.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.youngsModulusYInput.Name = "youngsModulusYInput";
             this.youngsModulusYInput.Size = new System.Drawing.Size(120, 20);
             this.youngsModulusYInput.TabIndex = 7;
-            this.youngsModulusYInput.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             // 
             // youngsModulusYLabel
             // 
             this.youngsModulusYLabel.AutoSize = true;
             this.youngsModulusYLabel.Location = new System.Drawing.Point(6, 77);
             this.youngsModulusYLabel.Name = "youngsModulusYLabel";
-            this.youngsModulusYLabel.Size = new System.Drawing.Size(98, 13);
+            this.youngsModulusYLabel.Size = new System.Drawing.Size(129, 13);
             this.youngsModulusYLabel.TabIndex = 8;
-            this.youngsModulusYLabel.Text = "Young\'s Modulus Y";
+            this.youngsModulusYLabel.Text = "Young\'s Modulus Y (MPa)";
             // 
             // youngsModulusXInput
             // 
             this.youngsModulusXInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.youngsModulusXInput.DecimalPlaces = 5;
+            this.youngsModulusXInput.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
             this.youngsModulusXInput.Location = new System.Drawing.Point(158, 34);
             this.youngsModulusXInput.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.youngsModulusXInput.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.youngsModulusXInput.Name = "youngsModulusXInput";
             this.youngsModulusXInput.Size = new System.Drawing.Size(120, 20);
             this.youngsModulusXInput.TabIndex = 1;
-            this.youngsModulusXInput.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             // 
             // youngsModulusXLabel
             // 
             this.youngsModulusXLabel.AutoSize = true;
             this.youngsModulusXLabel.Location = new System.Drawing.Point(6, 41);
             this.youngsModulusXLabel.Name = "youngsModulusXLabel";
-            this.youngsModulusXLabel.Size = new System.Drawing.Size(98, 13);
+            this.youngsModulusXLabel.Size = new System.Drawing.Size(129, 13);
             this.youngsModulusXLabel.TabIndex = 6;
-            this.youngsModulusXLabel.Text = "Young\'s Modulus X";
+            this.youngsModulusXLabel.Text = "Young\'s Modulus X (MPa)";
             // 
             // applyButton
             // 

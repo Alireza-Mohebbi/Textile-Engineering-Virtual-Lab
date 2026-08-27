@@ -226,12 +226,12 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.yarnWidthInput.Name = "yarnWidthInput";
             this.yarnWidthInput.Size = new System.Drawing.Size(120, 20);
             this.yarnWidthInput.TabIndex = 3;
             this.yarnWidthInput.Value = new decimal(new int[] {
-            20,
+            1,
             0,
             0,
             0});
@@ -249,12 +249,12 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.yarnThicknessInput.Name = "yarnThicknessInput";
             this.yarnThicknessInput.Size = new System.Drawing.Size(120, 20);
             this.yarnThicknessInput.TabIndex = 4;
             this.yarnThicknessInput.Value = new decimal(new int[] {
-            20,
+            1,
             0,
             0,
             0});
@@ -281,12 +281,12 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.yarnSpacingInput.Name = "yarnSpacingInput";
             this.yarnSpacingInput.Size = new System.Drawing.Size(120, 20);
             this.yarnSpacingInput.TabIndex = 5;
             this.yarnSpacingInput.Value = new decimal(new int[] {
-            70,
+            3,
             0,
             0,
             0});

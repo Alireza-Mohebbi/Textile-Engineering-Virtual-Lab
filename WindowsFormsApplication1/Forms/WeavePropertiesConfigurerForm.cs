@@ -22,10 +22,5 @@ namespace WindowsFormsApplication1.Forms
             DialogResult = DialogResult.OK;
             Close();
         }
-
-        private void Header_Click(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }
