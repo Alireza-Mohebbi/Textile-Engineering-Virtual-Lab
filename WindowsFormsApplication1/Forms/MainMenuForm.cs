@@ -26,22 +26,21 @@ namespace WindowsFormsApplication1
             {
                 Weave = weaveDesigner.NewWeave;
                 float scale;
-
                 if (Weave.WarpCount > Weave.WeftCount)
                 {
-                    scale = (float)1 / Weave.WarpCount;
+                    scale = (float)20 / Weave.WarpCount;
                 }
                 else
                 {
-                    scale = (float)1 / Weave.WeftCount;
+                    scale = (float)20 / Weave.WeftCount;
                 }
+
+                weavePropertiesButton.Enabled = true;
 
                 Graphics g = weaveViewer.CreateGraphics();
                 g.Clear(Color.White);
+                g.TranslateTransform(20, 20);
                 g.ScaleTransform(scale, scale);
-                g.TranslateTransform(10f, 10f);
-
-                weavePropertiesButton.Enabled = true;
 
                 WeaveRenderer weaveRenderer = new WeaveRenderer();
                 weaveRenderer.Draw(Weave, g);
@@ -76,40 +75,40 @@ namespace WindowsFormsApplication1
         {
             switch(plotTypeComboBox.SelectedIndex)
             {
-                // Stress-Strain inputs setting
+                // Stress-Strain inputs settings
                 case 0 :
                     input1.Visible = true;
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-                    inputLabel1.Text = "Stress 1";
+                    inputLabel1.Text = "Stress 1 (MPa)";
                     inputLabel2.Text = "Strain 1";
-                    inputLabel3.Text = "Stress 2";
+                    inputLabel3.Text = "Stress 2 (MPa)";
                     inputLabel4.Text = "Strain 2"; break;
 
-                // Bendind moment-Curvature inputs setting
+                // Bending moment-Curvature inputs settings
                 case 1 :
                     input1.Visible = true;
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-                    inputLabel1.Text = "Bending Moment 1";
-                    inputLabel2.Text = "Curvature 1";
-                    inputLabel3.Text = "Bending Moment 2";
-                    inputLabel4.Text = "Curvature 2"; break;
+                    inputLabel1.Text = "Bending Moment 1 (N.mm)";
+                    inputLabel2.Text = "Curvature 1 (mm^-1)";
+                    inputLabel3.Text = "Bending Moment 2 (N.mm)";
+                    inputLabel4.Text = "Curvature 2 (mm^-1)"; break;
 
-                // Shear stiffness inputs setting
+                // Shear stiffness inputs settings
                 case 2:
                     input1.Visible = true;
                     input2.Visible = true;
                     input3.Visible = true;
                     input4.Visible = true;
-                    inputLabel1.Text = "Shear Stress 1";
+                    inputLabel1.Text = "Shear Stress 1 (MPa)";
                     inputLabel2.Text = "Shear Strain 1";
-                    inputLabel3.Text = "Shear Stress 2";
+                    inputLabel3.Text = "Shear Stress 2 (MPa)";
                     inputLabel4.Text = "Shear Strain 2"; break;
 
-                // Drape curve inputs setting
+                // Drape curve inputs settings
                 case 3:
                     input1.Visible = false;
                     input2.Visible = false;

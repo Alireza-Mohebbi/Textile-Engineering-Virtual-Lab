@@ -30,8 +30,8 @@
         {
             this.newWeaveButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.weaveViewLabel = new System.Windows.Forms.Label();
             this.weavePropertiesButton = new System.Windows.Forms.Button();
+            this.weaveViewLabel = new System.Windows.Forms.Label();
             this.weaveViewer = new System.Windows.Forms.PictureBox();
             this.plotInputsPanel = new System.Windows.Forms.Panel();
             this.plotInputsGroupBox = new System.Windows.Forms.GroupBox();
@@ -72,26 +72,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.weaveViewLabel);
-            this.panel1.Controls.Add(this.weavePropertiesButton);
-            this.panel1.Controls.Add(this.weaveViewer);
             this.panel1.Controls.Add(this.newWeaveButton);
+            this.panel1.Controls.Add(this.weavePropertiesButton);
+            this.panel1.Controls.Add(this.weaveViewLabel);
+            this.panel1.Controls.Add(this.weaveViewer);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 477);
             this.panel1.TabIndex = 1;
-            // 
-            // weaveViewLabel
-            // 
-            this.weaveViewLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.weaveViewLabel.AutoSize = true;
-            this.weaveViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaveViewLabel.Location = new System.Drawing.Point(29, 348);
-            this.weaveViewLabel.Name = "weaveViewLabel";
-            this.weaveViewLabel.Size = new System.Drawing.Size(68, 13);
-            this.weaveViewLabel.TabIndex = 13;
-            this.weaveViewLabel.Text = "Weave View";
             // 
             // weavePropertiesButton
             // 
@@ -103,6 +92,17 @@
             this.weavePropertiesButton.Text = "Weave Properties";
             this.weavePropertiesButton.UseVisualStyleBackColor = true;
             this.weavePropertiesButton.Click += new System.EventHandler(this.weavePropertiesButton_Click);
+            // 
+            // weaveViewLabel
+            // 
+            this.weaveViewLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.weaveViewLabel.AutoSize = true;
+            this.weaveViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weaveViewLabel.Location = new System.Drawing.Point(28, 348);
+            this.weaveViewLabel.Name = "weaveViewLabel";
+            this.weaveViewLabel.Size = new System.Drawing.Size(68, 13);
+            this.weaveViewLabel.TabIndex = 13;
+            this.weaveViewLabel.Text = "Weave View";
             // 
             // weaveViewer
             // 
@@ -117,11 +117,11 @@
             // plotInputsPanel
             // 
             this.plotInputsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plotInputsPanel.Controls.Add(this.plotInputsGroupBox);
             this.plotInputsPanel.Controls.Add(this.plotterHeader);
             this.plotInputsPanel.Controls.Add(this.plotTypeLabel);
-            this.plotInputsPanel.Controls.Add(this.plotButton);
             this.plotInputsPanel.Controls.Add(this.plotTypeComboBox);
+            this.plotInputsPanel.Controls.Add(this.plotInputsGroupBox);
+            this.plotInputsPanel.Controls.Add(this.plotButton);
             this.plotInputsPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.plotInputsPanel.Enabled = false;
             this.plotInputsPanel.Location = new System.Drawing.Point(568, 0);
@@ -133,14 +133,14 @@
             // 
             this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.plotInputsGroupBox.Controls.Add(this.input4);
             this.plotInputsGroupBox.Controls.Add(this.input1);
-            this.plotInputsGroupBox.Controls.Add(this.inputLabel4);
+            this.plotInputsGroupBox.Controls.Add(this.input2);
+            this.plotInputsGroupBox.Controls.Add(this.input3);
+            this.plotInputsGroupBox.Controls.Add(this.input4);
             this.plotInputsGroupBox.Controls.Add(this.inputLabel1);
             this.plotInputsGroupBox.Controls.Add(this.inputLabel2);
             this.plotInputsGroupBox.Controls.Add(this.inputLabel3);
-            this.plotInputsGroupBox.Controls.Add(this.input3);
-            this.plotInputsGroupBox.Controls.Add(this.input2);
+            this.plotInputsGroupBox.Controls.Add(this.inputLabel4);
             this.plotInputsGroupBox.Location = new System.Drawing.Point(17, 129);
             this.plotInputsGroupBox.Name = "plotInputsGroupBox";
             this.plotInputsGroupBox.Size = new System.Drawing.Size(245, 299);
@@ -156,7 +156,7 @@
             0,
             0,
             327680});
-            this.input4.Location = new System.Drawing.Point(148, 127);
+            this.input4.Location = new System.Drawing.Point(148, 106);
             this.input4.Name = "input4";
             this.input4.Size = new System.Drawing.Size(86, 20);
             this.input4.TabIndex = 20;
@@ -177,38 +177,38 @@
             // inputLabel4
             // 
             this.inputLabel4.AutoSize = true;
-            this.inputLabel4.Location = new System.Drawing.Point(7, 134);
+            this.inputLabel4.Location = new System.Drawing.Point(10, 113);
             this.inputLabel4.Name = "inputLabel4";
-            this.inputLabel4.Size = new System.Drawing.Size(43, 13);
+            this.inputLabel4.Size = new System.Drawing.Size(40, 13);
             this.inputLabel4.TabIndex = 19;
-            this.inputLabel4.Text = "Strain 2";
+            this.inputLabel4.Text = "Input 4";
             // 
             // inputLabel1
             // 
             this.inputLabel1.AutoSize = true;
-            this.inputLabel1.Location = new System.Drawing.Point(9, 35);
+            this.inputLabel1.Location = new System.Drawing.Point(10, 35);
             this.inputLabel1.Name = "inputLabel1";
-            this.inputLabel1.Size = new System.Drawing.Size(45, 13);
+            this.inputLabel1.Size = new System.Drawing.Size(40, 13);
             this.inputLabel1.TabIndex = 14;
-            this.inputLabel1.Text = "Stress 1";
+            this.inputLabel1.Text = "Input 1";
             // 
             // inputLabel2
             // 
             this.inputLabel2.AutoSize = true;
-            this.inputLabel2.Location = new System.Drawing.Point(9, 61);
+            this.inputLabel2.Location = new System.Drawing.Point(10, 61);
             this.inputLabel2.Name = "inputLabel2";
-            this.inputLabel2.Size = new System.Drawing.Size(43, 13);
+            this.inputLabel2.Size = new System.Drawing.Size(40, 13);
             this.inputLabel2.TabIndex = 18;
-            this.inputLabel2.Text = "Strain 1";
+            this.inputLabel2.Text = "Input 2";
             // 
             // inputLabel3
             // 
             this.inputLabel3.AutoSize = true;
-            this.inputLabel3.Location = new System.Drawing.Point(7, 108);
+            this.inputLabel3.Location = new System.Drawing.Point(10, 87);
             this.inputLabel3.Name = "inputLabel3";
-            this.inputLabel3.Size = new System.Drawing.Size(45, 13);
+            this.inputLabel3.Size = new System.Drawing.Size(40, 13);
             this.inputLabel3.TabIndex = 15;
-            this.inputLabel3.Text = "Stress 2";
+            this.inputLabel3.Text = "Input 3";
             // 
             // input3
             // 
@@ -218,7 +218,7 @@
             0,
             0,
             327680});
-            this.input3.Location = new System.Drawing.Point(148, 101);
+            this.input3.Location = new System.Drawing.Point(148, 80);
             this.input3.Name = "input3";
             this.input3.Size = new System.Drawing.Size(86, 20);
             this.input3.TabIndex = 17;
@@ -240,7 +240,7 @@
             // 
             this.plotterHeader.AutoSize = true;
             this.plotterHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plotterHeader.Location = new System.Drawing.Point(88, 12);
+            this.plotterHeader.Location = new System.Drawing.Point(82, 12);
             this.plotterHeader.Name = "plotterHeader";
             this.plotterHeader.Size = new System.Drawing.Size(100, 31);
             this.plotterHeader.TabIndex = 12;
@@ -249,7 +249,7 @@
             // plotTypeLabel
             // 
             this.plotTypeLabel.AutoSize = true;
-            this.plotTypeLabel.Location = new System.Drawing.Point(14, 86);
+            this.plotTypeLabel.Location = new System.Drawing.Point(14, 76);
             this.plotTypeLabel.Name = "plotTypeLabel";
             this.plotTypeLabel.Size = new System.Drawing.Size(67, 13);
             this.plotTypeLabel.TabIndex = 5;
@@ -276,7 +276,7 @@
             "Bending Moment-Curvature Curve",
             "Shear Stiffness Curve",
             "Drape 2D"});
-            this.plotTypeComboBox.Location = new System.Drawing.Point(17, 102);
+            this.plotTypeComboBox.Location = new System.Drawing.Point(17, 92);
             this.plotTypeComboBox.Name = "plotTypeComboBox";
             this.plotTypeComboBox.Size = new System.Drawing.Size(245, 21);
             this.plotTypeComboBox.TabIndex = 3;
@@ -302,7 +302,9 @@
             this.Controls.Add(this.plotInputsPanel);
             this.Controls.Add(this.panel1);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weaveViewer)).EndInit();
@@ -328,7 +330,6 @@
         private System.Windows.Forms.Button plotButton;
         private System.Windows.Forms.PictureBox weaveViewer;
         private System.Windows.Forms.Label plotTypeLabel;
-        private System.Windows.Forms.PictureBox plotViewer;
         private System.Windows.Forms.Label plotterHeader;
         private System.Windows.Forms.NumericUpDown input1;
         private System.Windows.Forms.NumericUpDown input4;
@@ -341,5 +342,6 @@
         private System.Windows.Forms.Button weavePropertiesButton;
         private System.Windows.Forms.GroupBox plotInputsGroupBox;
         private System.Windows.Forms.Label weaveViewLabel;
+        private System.Windows.Forms.PictureBox plotViewer;
     }
 }

@@ -99,9 +99,9 @@
             this.arialDensityLabel.AutoSize = true;
             this.arialDensityLabel.Location = new System.Drawing.Point(6, 112);
             this.arialDensityLabel.Name = "arialDensityLabel";
-            this.arialDensityLabel.Size = new System.Drawing.Size(112, 13);
+            this.arialDensityLabel.Size = new System.Drawing.Size(120, 13);
             this.arialDensityLabel.TabIndex = 10;
-            this.arialDensityLabel.Text = "Arial Density (Kg/m^3)";
+            this.arialDensityLabel.Text = "Arial Density (Kg/mm^2)";
             // 
             // youngsModulusYInput
             // 
@@ -113,11 +113,6 @@
             0,
             327680});
             this.youngsModulusYInput.Location = new System.Drawing.Point(158, 70);
-            this.youngsModulusYInput.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.youngsModulusYInput.Name = "youngsModulusYInput";
             this.youngsModulusYInput.Size = new System.Drawing.Size(120, 20);
             this.youngsModulusYInput.TabIndex = 7;
@@ -141,11 +136,6 @@
             0,
             327680});
             this.youngsModulusXInput.Location = new System.Drawing.Point(158, 34);
-            this.youngsModulusXInput.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.youngsModulusXInput.Name = "youngsModulusXInput";
             this.youngsModulusXInput.Size = new System.Drawing.Size(120, 20);
             this.youngsModulusXInput.TabIndex = 1;

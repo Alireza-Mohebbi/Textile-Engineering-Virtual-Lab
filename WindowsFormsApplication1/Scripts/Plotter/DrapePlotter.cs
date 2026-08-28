@@ -9,10 +9,10 @@ namespace WindowsFormsApplication1.Plotter
     public partial class DrapePlotter : AbstractPlotter
     {
         private Weave weave;
-        private float bendingRigidity;
-        private float arialDensity;
-        private float length;
-        private float secondMomentOfInertia;
+        private float bendingRigidity;          // (N/mm^2)
+        private float arialDensity;             // (Kg/mm^2) 
+        private float length;                   // (mm)
+        private float secondMomentOfInertia;    // (mm^4)
 
         public DrapePlotter(Weave weave)
         {
@@ -23,6 +23,8 @@ namespace WindowsFormsApplication1.Plotter
             length = weave.FabricHeight;
         }
 
+        // Note: These calculations are with respect to the warp direction of the fabric
+        // If the drape in weft direction is desired, new calculations should be implemented
         public override void Plot(Graphics g)
         {
             int plotDomainX = 30;
@@ -36,12 +38,12 @@ namespace WindowsFormsApplication1.Plotter
 
             try
             {
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.TranslateTransform(100, 100);
-                g.ScaleTransform(5f, 5f);
-
                 PointF clampWallStartPoint = new PointF(points[0].X, points[0].Y - 20);
                 PointF clampWallEndPoint = new PointF(points[0].X, points[0].Y + 20);
+
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.TranslateTransform(20, 400);
+                g.ScaleTransform(5f, 5f);
 
                 g.DrawCurve(Pens.Blue, points);
                 g.DrawLine(Pens.Black, clampWallStartPoint, clampWallEndPoint);
@@ -52,26 +54,10 @@ namespace WindowsFormsApplication1.Plotter
             }
 
             // Textual info
-            g.DrawString(
-                "Bendinf Rigidity = " + bendingRigidity.ToString(),
-                new Font("Arial", 10),
-                Brushes.Black,
-                20,
-                20);
-
-            g.DrawString(
-                "Arial Density = " + arialDensity.ToString(),
-                new Font("Arial", 10),
-                Brushes.Black,
-                20,
-                40);
-
-            g.DrawString(
-                "Length = " + length.ToString("0.000"),
-                new Font("Arial", 10),
-                Brushes.Black,
-                20,
-                60);
+            g.ResetTransform();
+            g.DrawString("Bending Rigidity (N/mm^2) = " + bendingRigidity.ToString(), new Font("Arial", 10), Brushes.Black, 20, 20);
+            g.DrawString("Fabric Arial Density (Kg/mm^2) = " + arialDensity.ToString(), new Font("Arial", 10), Brushes.Black, 20, 40);
+            g.DrawString("Fabric Length (mm) = " + length.ToString("0.000"), new Font("Arial", 10), Brushes.Black, 20, 60);
         }
     }
 }

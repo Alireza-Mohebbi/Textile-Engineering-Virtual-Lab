@@ -8,7 +8,8 @@ namespace WindowsFormsApplication1.Plotter
 {
     public partial class BendingMomentCurvaturePlotter : AbstractPlotter
     {
-        private float moment1, moment2, curvature1, curvature2;
+        private float moment1, moment2;         // (N.mm)
+        private float curvature1, curvature2;   // (mm^-1)
 
         public BendingMomentCurvaturePlotter(float moment1, float moment2, float curvature1, float curvature2)
         {
@@ -25,7 +26,6 @@ namespace WindowsFormsApplication1.Plotter
 
             float b = (float)((Math.Log(moment1) - Math.Log(moment2)) / (Math.Log(curvature1) - Math.Log(curvature2)));
             float a = (float)(moment1 / Math.Pow(curvature1, b));
-
             List<PointF> points = new List<PointF>();
 
             for (int x = 0; x < axesRange; x++)
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1.Plotter
                     g.TranslateTransform(margin, margin);
                     g.ScaleTransform(scale, scale);
 
-                    DrawCoordinateSystem(g, axesRange, "Curvature", "Bending Moment");
+                    DrawCoordinateSystem(g, axesRange, "Curvature (mm^-1)", "Bending Moment (N.mm)");
                     g.DrawCurve(pen, points.ToArray());
                 }
             }

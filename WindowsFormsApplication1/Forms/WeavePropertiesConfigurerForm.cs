@@ -15,12 +15,19 @@ namespace WindowsFormsApplication1.Forms
 
         private void applyButton_Click(object sender, System.EventArgs e)
         {
-            Weave.YoungsModulusX = (float)youngsModulusXInput.Value;
-            Weave.YoungsModulusY = (float)youngsModulusYInput.Value;
-            Weave.FabricArialDensity = (float)arialDensityInput.Value;
+            if (youngsModulusXInput.Value != 0 && youngsModulusYInput.Value != 0 && arialDensityInput.Value != 0)
+            {
+                Weave.YoungsModulusX = (float)youngsModulusXInput.Value;
+                Weave.YoungsModulusY = (float)youngsModulusYInput.Value;
+                Weave.FabricArialDensity = (float)arialDensityInput.Value;
 
-            DialogResult = DialogResult.OK;
-            Close();
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Please fill all inputs.");
+            }
         }
     }
 }
