@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             DoubleBuffered = true;
             weaveViewer.Paint += weaveViewer_Paint;
+            plotViewer.Paint += plotViewer_Paint;
         }
 
         private void newWeaveButton_Click(object sender, EventArgs e)
@@ -34,37 +35,7 @@ namespace WindowsFormsApplication1
 
         private void plotButton_Click(object sender, EventArgs e)
         {
-            Graphics g = plotViewer.CreateGraphics();
-            g.Clear(Color.White);
-            g.ScaleTransform(0.5f, 0.5f);
-
-            switch (plotTypeComboBox.SelectedIndex)
-            {
-                // Stress-Strain plotter selected
-                case 1:
-                    AbstractPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
-                        (float)input1.Value,
-                        (float)input2.Value,
-                        (float)input3.Value,
-                        (float)input4.Value);
-                    bendingMomentCurvaturePlotter.Plot(g); break;
-
-                // Shear stiffness plotter selected
-                case 2:
-                    AbstractPlotter shearStiffnessPlotter = new ShearStiffnessPlotter(
-                        (float)input1.Value,
-                        (float)input2.Value,
-                        (float)input3.Value,
-                        (float)input4.Value);
-                    shearStiffnessPlotter.Plot(g); break;
-
-                // Drape plotter selected
-                case 3:
-                    AbstractPlotter drapePlotter = new DrapePlotter(Weave);
-                    drapePlotter.Plot(g); break;
-
-                default: break;
-            }
+            plotViewer.Invalidate();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,6 +115,40 @@ namespace WindowsFormsApplication1
 
             WeaveRenderer weaveRenderer = new WeaveRenderer();
             weaveRenderer.Draw(Weave, e.Graphics);
+        }
+
+        private void plotViewer_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.White);
+            e.Graphics.ScaleTransform(0.5f, 0.5f);
+
+            switch (plotTypeComboBox.SelectedIndex)
+            {
+                // Stress-Strain plotter selected
+                case 1:
+                    AbstractPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
+                        (float)input1.Value,
+                        (float)input2.Value,
+                        (float)input3.Value,
+                        (float)input4.Value);
+                    bendingMomentCurvaturePlotter.Plot(e.Graphics); break;
+
+                // Shear stiffness plotter selected
+                case 2:
+                    AbstractPlotter shearStiffnessPlotter = new ShearStiffnessPlotter(
+                        (float)input1.Value,
+                        (float)input2.Value,
+                        (float)input3.Value,
+                        (float)input4.Value);
+                    shearStiffnessPlotter.Plot(e.Graphics); break;
+
+                // Drape plotter selected
+                case 3:
+                    AbstractPlotter drapePlotter = new DrapePlotter(Weave);
+                    drapePlotter.Plot(e.Graphics); break;
+
+                default: break;
+            }
         }
     }
 }

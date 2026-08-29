@@ -34,28 +34,28 @@
             this.weaveViewLabel = new System.Windows.Forms.Label();
             this.weaveViewer = new System.Windows.Forms.PictureBox();
             this.plotInputsPanel = new System.Windows.Forms.Panel();
+            this.plotterHeader = new System.Windows.Forms.Label();
+            this.plotTypeLabel = new System.Windows.Forms.Label();
+            this.plotTypeComboBox = new System.Windows.Forms.ComboBox();
             this.plotInputsGroupBox = new System.Windows.Forms.GroupBox();
-            this.input4 = new System.Windows.Forms.NumericUpDown();
             this.input1 = new System.Windows.Forms.NumericUpDown();
-            this.inputLabel4 = new System.Windows.Forms.Label();
+            this.input2 = new System.Windows.Forms.NumericUpDown();
+            this.input3 = new System.Windows.Forms.NumericUpDown();
+            this.input4 = new System.Windows.Forms.NumericUpDown();
             this.inputLabel1 = new System.Windows.Forms.Label();
             this.inputLabel2 = new System.Windows.Forms.Label();
             this.inputLabel3 = new System.Windows.Forms.Label();
-            this.input3 = new System.Windows.Forms.NumericUpDown();
-            this.input2 = new System.Windows.Forms.NumericUpDown();
-            this.plotterHeader = new System.Windows.Forms.Label();
-            this.plotTypeLabel = new System.Windows.Forms.Label();
+            this.inputLabel4 = new System.Windows.Forms.Label();
             this.plotButton = new System.Windows.Forms.Button();
-            this.plotTypeComboBox = new System.Windows.Forms.ComboBox();
             this.plotViewer = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weaveViewer)).BeginInit();
             this.plotInputsPanel.SuspendLayout();
             this.plotInputsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.input4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.input1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.input3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.input2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.input3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.input4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plotViewer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +129,42 @@
             this.plotInputsPanel.Size = new System.Drawing.Size(281, 477);
             this.plotInputsPanel.TabIndex = 2;
             // 
+            // plotterHeader
+            // 
+            this.plotterHeader.AutoSize = true;
+            this.plotterHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plotterHeader.Location = new System.Drawing.Point(82, 12);
+            this.plotterHeader.Name = "plotterHeader";
+            this.plotterHeader.Size = new System.Drawing.Size(100, 31);
+            this.plotterHeader.TabIndex = 12;
+            this.plotterHeader.Text = "Plotter";
+            // 
+            // plotTypeLabel
+            // 
+            this.plotTypeLabel.AutoSize = true;
+            this.plotTypeLabel.Location = new System.Drawing.Point(14, 76);
+            this.plotTypeLabel.Name = "plotTypeLabel";
+            this.plotTypeLabel.Size = new System.Drawing.Size(67, 13);
+            this.plotTypeLabel.TabIndex = 5;
+            this.plotTypeLabel.Text = "Select a Plot";
+            // 
+            // plotTypeComboBox
+            // 
+            this.plotTypeComboBox.DisplayMember = "iii";
+            this.plotTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.plotTypeComboBox.FormattingEnabled = true;
+            this.plotTypeComboBox.Items.AddRange(new object[] {
+            "Stress-Strain Curve",
+            "Bending Moment-Curvature Curve",
+            "Shear Stiffness Curve",
+            "Drape 2D"});
+            this.plotTypeComboBox.Location = new System.Drawing.Point(17, 92);
+            this.plotTypeComboBox.Name = "plotTypeComboBox";
+            this.plotTypeComboBox.Size = new System.Drawing.Size(245, 21);
+            this.plotTypeComboBox.TabIndex = 3;
+            this.plotTypeComboBox.Tag = "";
+            this.plotTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // plotInputsGroupBox
             // 
             this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -148,19 +184,6 @@
             this.plotInputsGroupBox.TabStop = false;
             this.plotInputsGroupBox.Text = "Inputs";
             // 
-            // input4
-            // 
-            this.input4.DecimalPlaces = 5;
-            this.input4.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            327680});
-            this.input4.Location = new System.Drawing.Point(148, 106);
-            this.input4.Name = "input4";
-            this.input4.Size = new System.Drawing.Size(86, 20);
-            this.input4.TabIndex = 20;
-            // 
             // input1
             // 
             this.input1.DecimalPlaces = 5;
@@ -174,14 +197,44 @@
             this.input1.Size = new System.Drawing.Size(86, 20);
             this.input1.TabIndex = 13;
             // 
-            // inputLabel4
+            // input2
             // 
-            this.inputLabel4.AutoSize = true;
-            this.inputLabel4.Location = new System.Drawing.Point(10, 113);
-            this.inputLabel4.Name = "inputLabel4";
-            this.inputLabel4.Size = new System.Drawing.Size(40, 13);
-            this.inputLabel4.TabIndex = 19;
-            this.inputLabel4.Text = "Input 4";
+            this.input2.DecimalPlaces = 5;
+            this.input2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
+            this.input2.Location = new System.Drawing.Point(148, 54);
+            this.input2.Name = "input2";
+            this.input2.Size = new System.Drawing.Size(86, 20);
+            this.input2.TabIndex = 16;
+            // 
+            // input3
+            // 
+            this.input3.DecimalPlaces = 5;
+            this.input3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
+            this.input3.Location = new System.Drawing.Point(148, 80);
+            this.input3.Name = "input3";
+            this.input3.Size = new System.Drawing.Size(86, 20);
+            this.input3.TabIndex = 17;
+            // 
+            // input4
+            // 
+            this.input4.DecimalPlaces = 5;
+            this.input4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            327680});
+            this.input4.Location = new System.Drawing.Point(148, 106);
+            this.input4.Name = "input4";
+            this.input4.Size = new System.Drawing.Size(86, 20);
+            this.input4.TabIndex = 20;
             // 
             // inputLabel1
             // 
@@ -210,50 +263,14 @@
             this.inputLabel3.TabIndex = 15;
             this.inputLabel3.Text = "Input 3";
             // 
-            // input3
+            // inputLabel4
             // 
-            this.input3.DecimalPlaces = 5;
-            this.input3.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            327680});
-            this.input3.Location = new System.Drawing.Point(148, 80);
-            this.input3.Name = "input3";
-            this.input3.Size = new System.Drawing.Size(86, 20);
-            this.input3.TabIndex = 17;
-            // 
-            // input2
-            // 
-            this.input2.DecimalPlaces = 5;
-            this.input2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            327680});
-            this.input2.Location = new System.Drawing.Point(148, 54);
-            this.input2.Name = "input2";
-            this.input2.Size = new System.Drawing.Size(86, 20);
-            this.input2.TabIndex = 16;
-            // 
-            // plotterHeader
-            // 
-            this.plotterHeader.AutoSize = true;
-            this.plotterHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plotterHeader.Location = new System.Drawing.Point(82, 12);
-            this.plotterHeader.Name = "plotterHeader";
-            this.plotterHeader.Size = new System.Drawing.Size(100, 31);
-            this.plotterHeader.TabIndex = 12;
-            this.plotterHeader.Text = "Plotter";
-            // 
-            // plotTypeLabel
-            // 
-            this.plotTypeLabel.AutoSize = true;
-            this.plotTypeLabel.Location = new System.Drawing.Point(14, 76);
-            this.plotTypeLabel.Name = "plotTypeLabel";
-            this.plotTypeLabel.Size = new System.Drawing.Size(67, 13);
-            this.plotTypeLabel.TabIndex = 5;
-            this.plotTypeLabel.Text = "Select a Plot";
+            this.inputLabel4.AutoSize = true;
+            this.inputLabel4.Location = new System.Drawing.Point(10, 113);
+            this.inputLabel4.Name = "inputLabel4";
+            this.inputLabel4.Size = new System.Drawing.Size(40, 13);
+            this.inputLabel4.TabIndex = 19;
+            this.inputLabel4.Text = "Input 4";
             // 
             // plotButton
             // 
@@ -266,31 +283,13 @@
             this.plotButton.UseVisualStyleBackColor = true;
             this.plotButton.Click += new System.EventHandler(this.plotButton_Click);
             // 
-            // plotTypeComboBox
-            // 
-            this.plotTypeComboBox.DisplayMember = "iii";
-            this.plotTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.plotTypeComboBox.FormattingEnabled = true;
-            this.plotTypeComboBox.Items.AddRange(new object[] {
-            "Stress-Strain Curve",
-            "Bending Moment-Curvature Curve",
-            "Shear Stiffness Curve",
-            "Drape 2D"});
-            this.plotTypeComboBox.Location = new System.Drawing.Point(17, 92);
-            this.plotTypeComboBox.Name = "plotTypeComboBox";
-            this.plotTypeComboBox.Size = new System.Drawing.Size(245, 21);
-            this.plotTypeComboBox.TabIndex = 3;
-            this.plotTypeComboBox.Tag = "";
-            this.plotTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // plotViewer
             // 
-            this.plotViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plotViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plotViewer.Location = new System.Drawing.Point(133, 0);
             this.plotViewer.Name = "plotViewer";
             this.plotViewer.Size = new System.Drawing.Size(435, 477);
-            this.plotViewer.TabIndex = 5;
+            this.plotViewer.TabIndex = 3;
             this.plotViewer.TabStop = false;
             // 
             // MainMenu
@@ -312,10 +311,10 @@
             this.plotInputsPanel.PerformLayout();
             this.plotInputsGroupBox.ResumeLayout(false);
             this.plotInputsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.input4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.input1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.input3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.input2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.input3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.input4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plotViewer)).EndInit();
             this.ResumeLayout(false);
 
