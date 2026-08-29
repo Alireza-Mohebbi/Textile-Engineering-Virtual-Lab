@@ -16,6 +16,8 @@ namespace WindowsFormsApplication1
         public MainMenu()
         {
             InitializeComponent();
+            DoubleBuffered = true;
+            weaveViewer.Paint += weaveViewer_Paint;
         }
 
         private void newWeaveButton_Click(object sender, EventArgs e)
@@ -25,25 +27,8 @@ namespace WindowsFormsApplication1
             if (weaveDesigner.ShowDialog() == DialogResult.OK)
             {
                 Weave = weaveDesigner.NewWeave;
-                float scale;
-                if (Weave.WarpCount > Weave.WeftCount)
-                {
-                    scale = (float)20 / Weave.WarpCount;
-                }
-                else
-                {
-                    scale = (float)20 / Weave.WeftCount;
-                }
-
                 weavePropertiesButton.Enabled = true;
-
-                Graphics g = weaveViewer.CreateGraphics();
-                g.Clear(Color.White);
-                g.TranslateTransform(20, 20);
-                g.ScaleTransform(scale, scale);
-
-                WeaveRenderer weaveRenderer = new WeaveRenderer();
-                weaveRenderer.Draw(Weave, g);
+                weaveViewer.Invalidate();
             }
         }
 
@@ -150,6 +135,15 @@ namespace WindowsFormsApplication1
                 Weave = weavePropertiesConfigurer.Weave;
                 plotInputsPanel.Enabled = true;
             }
+        }
+
+        private void weaveViewer_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.White);
+            e.Graphics.ScaleTransform(20f, 20f);
+
+            WeaveRenderer weaveRenderer = new WeaveRenderer();
+            weaveRenderer.Draw(Weave, e.Graphics);
         }
     }
 }

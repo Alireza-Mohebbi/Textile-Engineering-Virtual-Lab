@@ -10,7 +10,6 @@ namespace WindowsFormsApplication1
     public partial class WeaveDesigner : Form
     {
         public Weave NewWeave { get; set; }
-    
         private Rectangle[,] interactiveIntersectionsOfWeave;
 
         private const int marginFromScreenCoord = 50;
@@ -34,9 +33,7 @@ namespace WindowsFormsApplication1
             NewWeave.RepeatY = (int)repeatYInput.Value;
 
             DefineInteractiveIntersectionsOfWeave();
-
             insertWeaveButton.Enabled = true;
-
             Invalidate();
         }
 
@@ -60,12 +57,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void Form1_MouseClick(
-            object sender,
-            MouseEventArgs e)
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (NewWeave == null ||
-                interactiveIntersectionsOfWeave == null)
+            if (NewWeave == null || interactiveIntersectionsOfWeave == null)
             {
                 return;
             }
@@ -87,7 +81,9 @@ namespace WindowsFormsApplication1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             if (NewWeave == null)
+            {
                 return;
+            }
 
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.TranslateTransform(marginFromScreenCoord, marginFromScreenCoord);
