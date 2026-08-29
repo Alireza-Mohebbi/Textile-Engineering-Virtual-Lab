@@ -58,6 +58,7 @@
     <Compile Include="Forms\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Plotter\ShearStiffnessPlotter.cs" />
     <Compile Include="Scripts\Plotter\BendingMomentCurvaturePlotter.cs" />
     <Compile Include="Scripts\Plotter\DrapePlotter.cs" />
     <Compile Include="Scripts\Plotter\AbstractPlotter.cs" />

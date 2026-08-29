@@ -6,26 +6,26 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1.Plotter
 {
-    public partial class BendingMomentCurvaturePlotter : AbstractPlotter
+    public partial class ShearStiffnessPlotter : AbstractPlotter
     {
-        private float moment1, moment2;         // (N.mm)
-        private float curvature1, curvature2;   // (mm^-1)
+        private float stress1, stress2;     // (MPa)
+        private float strain1, strain2;
 
-        public BendingMomentCurvaturePlotter(float moment1, float moment2, float curvature1, float curvature2)
+        public ShearStiffnessPlotter(float stress1, float stress2, float strain1, float strain2)
         {
-            this.moment1 = moment1;
-            this.moment2 = moment2;
-            this.curvature1 = curvature1;
-            this.curvature2 = curvature2;
+            this.stress1 = stress1;
+            this.stress2 = stress2;
+            this.strain1 = strain1;
+            this.strain2 = strain2;
         }
 
         public override void Plot(Graphics g)
         {
-            // Curve approximation formula: M = a * c^b
-            // M: Moment, C: Curvature, a and b: Experimental constants
+            // Curve approximation formula: Stress = a * Strain^b
+            // a and b: Experimental constants
 
-            float b = (float)((Math.Log(moment1) - Math.Log(moment2)) / (Math.Log(curvature1) - Math.Log(curvature2)));
-            float a = (float)(moment1 / Math.Pow(curvature1, b));
+            float b = ((float)Math.Log(stress1) - (float)Math.Log(stress2)) / ((float)Math.Log(strain1) - (float)Math.Log(strain2));
+            float a = stress1 / (float)Math.Pow(strain1, b);
             List<PointF> points = new List<PointF>();
 
             for (int x = 0; x < axesRange; x++)
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1.Plotter
                     g.TranslateTransform(margin, margin);
                     g.ScaleTransform(scale, scale);
 
-                    DrawCoordinateSystem(g, axesRange, "Curvature (mm^-1)", "Bending Moment (N.mm)");
+                    DrawCoordinateSystem(g, axesRange, "Shear Strain", "Shear Stress (MPa)");
                     g.DrawCurve(pen, points.ToArray());
                 }
             }

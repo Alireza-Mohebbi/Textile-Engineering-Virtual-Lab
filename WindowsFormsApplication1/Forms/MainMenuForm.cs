@@ -55,19 +55,30 @@ namespace WindowsFormsApplication1
 
             switch (plotTypeComboBox.SelectedIndex)
             {
-                case 1 :
+                // Stress-Strain plotter selected
+                case 1:
                     AbstractPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
-                    (float)input1.Value,
-                    (float)input2.Value,
-                    (float)input3.Value,
-                    (float)input4.Value);
+                        (float)input1.Value,
+                        (float)input2.Value,
+                        (float)input3.Value,
+                        (float)input4.Value);
                     bendingMomentCurvaturePlotter.Plot(g); break;
 
-                case 3 :
+                // Shear stiffness plotter selected
+                case 2:
+                    AbstractPlotter shearStiffnessPlotter = new ShearStiffnessPlotter(
+                        (float)input1.Value,
+                        (float)input2.Value,
+                        (float)input3.Value,
+                        (float)input4.Value);
+                    shearStiffnessPlotter.Plot(g); break;
+
+                // Drape plotter selected
+                case 3:
                     AbstractPlotter drapePlotter = new DrapePlotter(Weave);
                     drapePlotter.Plot(g); break;
 
-                default : break;
+                default: break;
             }
         }
 
@@ -76,7 +87,7 @@ namespace WindowsFormsApplication1
             switch(plotTypeComboBox.SelectedIndex)
             {
                 // Stress-Strain inputs settings
-                case 0 :
+                case 0:
                     input1.Visible = true;
                     input2.Visible = true;
                     input3.Visible = true;
@@ -87,7 +98,7 @@ namespace WindowsFormsApplication1
                     inputLabel4.Text = "Strain 2"; break;
 
                 // Bending moment-Curvature inputs settings
-                case 1 :
+                case 1:
                     input1.Visible = true;
                     input2.Visible = true;
                     input3.Visible = true;
