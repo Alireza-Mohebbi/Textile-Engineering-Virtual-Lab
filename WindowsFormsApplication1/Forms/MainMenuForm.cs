@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
 
             if (weaveDesigner.ShowDialog() == DialogResult.OK)
             {
-                Weave = weaveDesigner.NewWeave;
+                Weave = weaveDesigner.DesignedWeave;
                 weavePropertiesButton.Enabled = true;
                 weaveViewer.Invalidate();
             }

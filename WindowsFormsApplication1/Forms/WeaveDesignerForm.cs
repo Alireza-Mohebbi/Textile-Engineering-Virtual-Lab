@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 {
     public partial class WeaveDesigner : Form
     {
-        public Weave NewWeave { get; set; }
+        public Weave DesignedWeave { get; set; }
         private Rectangle[,] interactiveIntersectionsOfWeave;
 
         private const int marginFromScreenCoord = 50;
