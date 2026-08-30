@@ -8,15 +8,15 @@ namespace WindowsFormsApplication1.Plotter
 {
     public partial class ShearStiffnessPlotter : AbstractPlotter
     {
-        private float stress1, stress2;     // (MPa)
-        private float strain1, strain2;
+        private float shearStress1, shearStress2;     // (MPa)
+        private float shearStrain1, shearStrain2;
 
-        public ShearStiffnessPlotter(float stress1, float stress2, float strain1, float strain2)
+        public ShearStiffnessPlotter(float shearStress1, float shearStress2, float shearStrain1, float shearStrain2)
         {
-            this.stress1 = stress1;
-            this.stress2 = stress2;
-            this.strain1 = strain1;
-            this.strain2 = strain2;
+            this.shearStress1 = shearStress1;
+            this.shearStress2 = shearStress2;
+            this.shearStrain1 = shearStrain1;
+            this.shearStrain2 = shearStrain2;
         }
 
         public override void Plot(Graphics g)
@@ -24,8 +24,8 @@ namespace WindowsFormsApplication1.Plotter
             // Curve approximation formula: Stress = a * Strain^b
             // a and b: Experimental constants
 
-            float b = ((float)Math.Log(stress1) - (float)Math.Log(stress2)) / ((float)Math.Log(strain1) - (float)Math.Log(strain2));
-            float a = stress1 / (float)Math.Pow(strain1, b);
+            float b = ((float)Math.Log(shearStress1) - (float)Math.Log(shearStress2)) / ((float)Math.Log(shearStrain1) - (float)Math.Log(shearStrain2));
+            float a = shearStress1 / (float)Math.Pow(shearStrain1, b);
             List<PointF> points = new List<PointF>();
 
             for (int x = 0; x < axesRange; x++)

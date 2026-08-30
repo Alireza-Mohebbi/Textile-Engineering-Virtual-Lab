@@ -285,6 +285,7 @@
             // 
             // plotViewer
             // 
+            this.plotViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plotViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plotViewer.Location = new System.Drawing.Point(133, 0);
             this.plotViewer.Name = "plotViewer";

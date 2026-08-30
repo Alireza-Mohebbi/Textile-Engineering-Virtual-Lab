@@ -111,7 +111,9 @@ namespace WindowsFormsApplication1
         private void weaveViewer_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(Color.White);
-            e.Graphics.ScaleTransform(20f, 20f);
+            e.Graphics.TranslateTransform(10, 10);
+            e.Graphics.ScaleTransform(10, 10);
+
 
             WeaveRenderer weaveRenderer = new WeaveRenderer();
             weaveRenderer.Draw(Weave, e.Graphics);
