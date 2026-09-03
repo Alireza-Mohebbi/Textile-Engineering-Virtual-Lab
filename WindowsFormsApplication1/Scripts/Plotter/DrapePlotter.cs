@@ -25,7 +25,7 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
 
         // Note: These calculations are with respect to the warp direction of the fabric
         // If the drape in weft direction is desired, new calculations should be implemented
-        public override void Plot(Graphics g)
+        public override void DoPlot(Graphics g)
         {
             int plotDomainX = 30;
             PointF[] points = new PointF[plotDomainX];
@@ -44,7 +44,6 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.TranslateTransform(20, 400);
                 g.ScaleTransform(5f, 5f);
-
                 g.DrawCurve(Pens.Blue, points);
                 g.DrawLine(Pens.Black, clampWallStartPoint, clampWallEndPoint);
             }

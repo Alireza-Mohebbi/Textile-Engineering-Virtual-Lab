@@ -114,7 +114,6 @@ namespace TextileEngineeringVirtualLaboratory
             e.Graphics.TranslateTransform(10, 10);
             e.Graphics.ScaleTransform(10, 10);
 
-
             WeaveRenderer weaveRenderer = new WeaveRenderer();
             weaveRenderer.Draw(Weave, e.Graphics);
         }
@@ -133,7 +132,7 @@ namespace TextileEngineeringVirtualLaboratory
                         (float)input2.Value,
                         (float)input3.Value,
                         (float)input4.Value);
-                    bendingMomentCurvaturePlotter.Plot(e.Graphics); break;
+                    bendingMomentCurvaturePlotter.Plot(e.Graphics, "Curvature (mm^-1)", "Bending Moment (N.mm)"); break;
 
                 // Shear stiffness plotter selected
                 case 2:
@@ -142,7 +141,7 @@ namespace TextileEngineeringVirtualLaboratory
                         (float)input2.Value,
                         (float)input3.Value,
                         (float)input4.Value);
-                    shearStiffnessPlotter.Plot(e.Graphics); break;
+                    shearStiffnessPlotter.Plot(e.Graphics, "Shear Strain", "Shear Stress (MPa)"); break;
 
                 // Drape plotter selected
                 case 3:

@@ -19,7 +19,7 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
             this.shearStrain2 = shearStrain2;
         }
 
-        public override void Plot(Graphics g)
+        public override void DoPlot(Graphics g)
         {
             // Curve approximation formula: Stress = a * Strain^b
             // a and b: Experimental constants
@@ -46,7 +46,6 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
                     g.TranslateTransform(margin, margin);
                     g.ScaleTransform(scale, scale);
 
-                    DrawCoordinateSystem(g, axesRange, "Shear Strain", "Shear Stress (MPa)");
                     g.DrawCurve(pen, points.ToArray());
                 }
             }

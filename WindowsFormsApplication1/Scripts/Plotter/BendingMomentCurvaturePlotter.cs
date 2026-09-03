@@ -19,7 +19,7 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
             this.curvature2 = curvature2;
         }
 
-        public override void Plot(Graphics g)
+        public override void DoPlot(Graphics g)
         {
             // Curve approximation formula: M = a * c^b
             // M: Moment, C: Curvature, a and b: Experimental constants
@@ -45,8 +45,6 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
                     g.SmoothingMode = SmoothingMode.AntiAlias;
                     g.TranslateTransform(margin, margin);
                     g.ScaleTransform(scale, scale);
-
-                    DrawCoordinateSystem(g, axesRange, "Curvature (mm^-1)", "Bending Moment (N.mm)");
                     g.DrawCurve(pen, points.ToArray());
                 }
             }
