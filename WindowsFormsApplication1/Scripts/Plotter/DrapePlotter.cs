@@ -41,9 +41,6 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
                 PointF clampWallStartPoint = new PointF(points[0].X, points[0].Y - 20);
                 PointF clampWallEndPoint = new PointF(points[0].X, points[0].Y + 20);
 
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.TranslateTransform(20, 400);
-                g.ScaleTransform(5f, 5f);
                 g.DrawCurve(Pens.Blue, points);
                 g.DrawLine(Pens.Black, clampWallStartPoint, clampWallEndPoint);
             }

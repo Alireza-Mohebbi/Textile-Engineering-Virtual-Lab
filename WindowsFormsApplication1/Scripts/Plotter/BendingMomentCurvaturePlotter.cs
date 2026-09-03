@@ -42,9 +42,6 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
             {
                 using (Pen pen = new Pen(Color.Blue, 0.5f))
                 {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.TranslateTransform(margin, margin);
-                    g.ScaleTransform(scale, scale);
                     g.DrawCurve(pen, points.ToArray());
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace TextileEngineeringVirtualLaboratory.Plotter
 {
@@ -11,6 +12,10 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
         // Plot with coordinate system
         public void Plot(Graphics g, string labelX, string labelY)
         {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.TranslateTransform(margin, margin);
+            g.ScaleTransform(scale, scale);
+
             DrawCoordinateSystetm(g, labelX, labelY);
             DoPlot(g);
         }
@@ -18,6 +23,10 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
         // Plot without coordinate system
         public void Plot(Graphics g)
         {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.TranslateTransform(margin, margin);
+            g.ScaleTransform(scale, scale);
+
             DoPlot(g);
         }
 
