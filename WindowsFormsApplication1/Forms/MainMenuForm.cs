@@ -33,14 +33,29 @@ namespace TextileEngineeringVirtualLaboratory
             }
         }
 
-        private void plotButton_Click(object sender, EventArgs e)
+        private void weaveViewer_Paint(object sender, PaintEventArgs e)
         {
-            plotViewer.Invalidate();
+            e.Graphics.Clear(Color.White);
+            e.Graphics.TranslateTransform(10, 10);
+            e.Graphics.ScaleTransform(10, 10);
+
+            WeaveRenderer weaveRenderer = new WeaveRenderer();
+            weaveRenderer.Draw(Weave, e.Graphics);
+        }
+
+        private void weavePropertiesButton_Click(object sender, EventArgs e)
+        {
+            WeavePropertiesConfigurer weavePropertiesConfigurer = new WeavePropertiesConfigurer(Weave);
+            if (weavePropertiesConfigurer.ShowDialog() == DialogResult.OK)
+            {
+                Weave = weavePropertiesConfigurer.Weave;
+                plotInputsPanel.Enabled = true;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(plotTypeComboBox.SelectedIndex)
+            switch (plotTypeComboBox.SelectedIndex)
             {
                 // Stress-Strain inputs settings
                 case 0:
@@ -86,6 +101,7 @@ namespace TextileEngineeringVirtualLaboratory
                     inputLabel3.Text = "";
                     inputLabel4.Text = ""; break;
 
+                // Default implementation
                 default:
                     input1.Visible = false;
                     input2.Visible = false;
@@ -98,24 +114,9 @@ namespace TextileEngineeringVirtualLaboratory
             }
         }
 
-        private void weavePropertiesButton_Click(object sender, EventArgs e)
+        private void plotButton_Click(object sender, EventArgs e)
         {
-            WeavePropertiesConfigurer weavePropertiesConfigurer = new WeavePropertiesConfigurer(Weave);
-            if (weavePropertiesConfigurer.ShowDialog() == DialogResult.OK)
-            {
-                Weave = weavePropertiesConfigurer.Weave;
-                plotInputsPanel.Enabled = true;
-            }
-        }
-
-        private void weaveViewer_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.Clear(Color.White);
-            e.Graphics.TranslateTransform(10, 10);
-            e.Graphics.ScaleTransform(10, 10);
-
-            WeaveRenderer weaveRenderer = new WeaveRenderer();
-            weaveRenderer.Draw(Weave, e.Graphics);
+            plotViewer.Invalidate();
         }
 
         private void plotViewer_Paint(object sender, PaintEventArgs e)
@@ -148,6 +149,7 @@ namespace TextileEngineeringVirtualLaboratory
                     PlotterTemplate drapePlotter = new DrapePlotter(Weave);
                     drapePlotter.Plot(e.Graphics); break;
 
+                // None selected
                 default: break;
             }
         }

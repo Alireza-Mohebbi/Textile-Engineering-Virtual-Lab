@@ -5,16 +5,16 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
 {
     public abstract class PlotterTemplate
     {
-        public const int axesRange = 30;
-        public const int margin = 600;
-        public const int scale = 15;
+        protected const int axesRange = 30;
+        protected const int displayMargin = 600;
+        protected const int displayScale = 15;
 
         // Plot with coordinate system
         public void Plot(Graphics g, string labelX, string labelY)
         {
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.TranslateTransform(margin, margin);
-            g.ScaleTransform(scale, scale);
+            g.TranslateTransform(displayMargin, displayMargin);
+            g.ScaleTransform(displayScale, displayScale);
 
             DrawCoordinateSystetm(g, labelX, labelY);
             DoPlot(g);
@@ -24,8 +24,8 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
         public void Plot(Graphics g)
         {
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.TranslateTransform(margin, margin);
-            g.ScaleTransform(scale, scale);
+            g.TranslateTransform(displayMargin, displayMargin);
+            g.ScaleTransform(displayScale, displayScale);
 
             DoPlot(g);
         }
@@ -55,7 +55,7 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
             g.DrawString(labelY, textsFont, Brushes.Black, 0, -axesRange * 1.08f);
         }
 
-        // Concrete plotters implementations
+        // Implementations of concrete plotters
         public abstract void DoPlot(Graphics g);
     }
 }

@@ -11,18 +11,9 @@
         public bool[,] IsWarpOverWeft { get; set; }
         public int RepeatX { get; set; }
         public int RepeatY { get; set; }
-        public float FabricWidth    // (mm)
-        {
-            get { return ((YarnWidth + YarnSpacing) * WarpCount * RepeatX) - YarnSpacing;}
-        }
-        public float FabricHeight   // (mm)
-        {
-            get { return ((YarnWidth + YarnSpacing) * WeftCount * RepeatY) - YarnSpacing; }
-        }
-        public float FabricThickness    // (mm)
-        {
-            get { return 2 * YarnThickness;}
-        }
+        public float FabricWidth { get { return ((YarnWidth + YarnSpacing) * WarpCount * RepeatX) - YarnSpacing; } }    // (mm)
+        public float FabricHeight { get { return ((YarnWidth + YarnSpacing) * WeftCount * RepeatY) - YarnSpacing; } }   // (mm)
+        public float FabricThickness { get { return 2 * YarnThickness; } }  // (mm)
 
         /// Weave mechanical properties ///
         public float YoungsModulusX { get; set; }       // (MPa)
@@ -30,7 +21,7 @@
         public float FabricArialDensity { get; set; }   // (Kg/mm^2)
 
         /// Other general properties ///
-        private const float gravitaionalAcceleration = 9810f;   // (mm/s^2)
+        private const float gravitaionalAcceleration = 9810;    // (mm/s^2)
 
         public Weave(int warps, int wefts)
         {

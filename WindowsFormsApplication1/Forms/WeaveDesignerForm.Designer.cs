@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WeaveDesigner));
             this.weaveDesignerPanel = new System.Windows.Forms.Panel();
             this.weaveInputsGroupBox = new System.Windows.Forms.GroupBox();
             this.weftCountInput = new System.Windows.Forms.NumericUpDown();
@@ -348,6 +349,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 477);
             this.Controls.Add(this.weaveDesignerPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WeaveDesigner";
             this.Text = "Weave Designer";
             this.weaveDesignerPanel.ResumeLayout(false);

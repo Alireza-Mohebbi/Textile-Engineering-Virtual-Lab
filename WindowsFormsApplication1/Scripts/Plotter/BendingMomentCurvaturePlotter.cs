@@ -35,7 +35,7 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
                 {
                     break;
                 }
-                points.Add(new PointF(x, y));
+                points.Add(new PointF(x, -y));  // The negative in '-y' is because Y component of screen coord is inverse
             }
 
             try

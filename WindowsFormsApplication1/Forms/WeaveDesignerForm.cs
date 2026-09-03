@@ -11,9 +11,8 @@ namespace TextileEngineeringVirtualLaboratory
     {
         public Weave DesignedWeave { get; set; }
         private Rectangle[,] interactiveIntersectionsOfWeave;
-
         private const int marginFromScreenCoord = 50;
-        private const float displayScale = 50f;
+        private const float displayScale = 50;
 
         public WeaveDesigner()
         {
@@ -40,7 +39,9 @@ namespace TextileEngineeringVirtualLaboratory
         private void DefineInteractiveIntersectionsOfWeave()
         {
             if (DesignedWeave == null)
+            {
                 return;
+            }
 
             interactiveIntersectionsOfWeave = new Rectangle[DesignedWeave.WarpCount, DesignedWeave.WeftCount];
             int interactiveAreaSize = Math.Max(10, (int)(DesignedWeave.YarnWidth * displayScale));
@@ -57,6 +58,7 @@ namespace TextileEngineeringVirtualLaboratory
             }
         }
 
+        // Switch between warp-over-weft or vice versa by clicking on that intersection
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             if (DesignedWeave == null || interactiveIntersectionsOfWeave == null)

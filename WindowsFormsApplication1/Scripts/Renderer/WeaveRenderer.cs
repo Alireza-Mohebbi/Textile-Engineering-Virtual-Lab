@@ -12,7 +12,9 @@ namespace TextileEngineeringVirtualLaboratory.Renderer
         public void Draw(Weave weave, Graphics g)
         {
             if (weave == null || g == null)
+            {
                 return;
+            }
 
             this.weave = weave;
             weaveGraphics = g;

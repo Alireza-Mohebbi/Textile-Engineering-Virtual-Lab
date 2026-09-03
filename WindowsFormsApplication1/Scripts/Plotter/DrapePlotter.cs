@@ -27,10 +27,9 @@ namespace TextileEngineeringVirtualLaboratory.Plotter
         // If the drape in weft direction is desired, new calculations should be implemented
         public override void DoPlot(Graphics g)
         {
-            int plotDomainX = 30;
-            PointF[] points = new PointF[plotDomainX];
+            PointF[] points = new PointF[axesRange];
 
-            for (int x = 0; x < plotDomainX; x++)
+            for (int x = 0; x < axesRange; x++)
             {
                 float y = ((arialDensity * x * x) / (24 * bendingRigidity)) * ((6 * length * length) - (4 * length * x) + (x * x));
                 points[x] = new PointF(x, y);

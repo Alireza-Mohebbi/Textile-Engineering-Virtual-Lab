@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.newWeaveButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.controls = new System.Windows.Forms.Panel();
             this.weavePropertiesButton = new System.Windows.Forms.Button();
             this.weaveViewLabel = new System.Windows.Forms.Label();
             this.weaveViewer = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,7 @@
             this.inputLabel4 = new System.Windows.Forms.Label();
             this.plotButton = new System.Windows.Forms.Button();
             this.plotViewer = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.controls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weaveViewer)).BeginInit();
             this.plotInputsPanel.SuspendLayout();
             this.plotInputsGroupBox.SuspendLayout();
@@ -69,18 +69,18 @@
             this.newWeaveButton.UseVisualStyleBackColor = true;
             this.newWeaveButton.Click += new System.EventHandler(this.newWeaveButton_Click);
             // 
-            // panel1
+            // controls
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.newWeaveButton);
-            this.panel1.Controls.Add(this.weavePropertiesButton);
-            this.panel1.Controls.Add(this.weaveViewLabel);
-            this.panel1.Controls.Add(this.weaveViewer);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 477);
-            this.panel1.TabIndex = 1;
+            this.controls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.controls.Controls.Add(this.newWeaveButton);
+            this.controls.Controls.Add(this.weavePropertiesButton);
+            this.controls.Controls.Add(this.weaveViewLabel);
+            this.controls.Controls.Add(this.weaveViewer);
+            this.controls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.controls.Location = new System.Drawing.Point(0, 0);
+            this.controls.Name = "controls";
+            this.controls.Size = new System.Drawing.Size(133, 477);
+            this.controls.TabIndex = 1;
             // 
             // weavePropertiesButton
             // 
@@ -167,7 +167,7 @@
             // 
             // plotInputsGroupBox
             // 
-            this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.plotInputsGroupBox.Controls.Add(this.input1);
             this.plotInputsGroupBox.Controls.Add(this.input2);
@@ -300,13 +300,13 @@
             this.ClientSize = new System.Drawing.Size(849, 477);
             this.Controls.Add(this.plotViewer);
             this.Controls.Add(this.plotInputsPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.controls);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.controls.ResumeLayout(false);
+            this.controls.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weaveViewer)).EndInit();
             this.plotInputsPanel.ResumeLayout(false);
             this.plotInputsPanel.PerformLayout();
@@ -324,7 +324,7 @@
         #endregion
 
         private System.Windows.Forms.Button newWeaveButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel controls;
         private System.Windows.Forms.Panel plotInputsPanel;
         private System.Windows.Forms.ComboBox plotTypeComboBox;
         private System.Windows.Forms.Button plotButton;
