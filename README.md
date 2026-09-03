@@ -2,6 +2,10 @@
 
 This software allows users to model a 2D weave structure including its cross section and assign mechanical and physical properties to it. Based on the modeled geometry and assigned properties, the software provides approximate predictions of the weave's mechanical behavior and generates useful mechanical plots.
 
+## Cooperations
+
+The project is led by Dr. Mostafa Jamshidi, assistant professor in the Department of Textile Engineering at the University of Guilan.
+
 ## 🚧 Under development
 
 The initial versions will focus on 2D weave modeling, property assignment, and approximate mechanical predictions. Accuracy and modeling capabilities will be improved as the underlying models are developed and validated.
