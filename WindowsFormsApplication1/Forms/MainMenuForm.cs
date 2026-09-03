@@ -128,7 +128,7 @@ namespace TextileEngineeringVirtualLaboratory
             {
                 // Stress-Strain plotter selected
                 case 1:
-                    AbstractPlotter bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
+                    PlotterTemplate bendingMomentCurvaturePlotter = new BendingMomentCurvaturePlotter(
                         (float)input1.Value,
                         (float)input2.Value,
                         (float)input3.Value,
@@ -137,7 +137,7 @@ namespace TextileEngineeringVirtualLaboratory
 
                 // Shear stiffness plotter selected
                 case 2:
-                    AbstractPlotter shearStiffnessPlotter = new ShearStiffnessPlotter(
+                    PlotterTemplate shearStiffnessPlotter = new ShearStiffnessPlotter(
                         (float)input1.Value,
                         (float)input2.Value,
                         (float)input3.Value,
@@ -146,7 +146,7 @@ namespace TextileEngineeringVirtualLaboratory
 
                 // Drape plotter selected
                 case 3:
-                    AbstractPlotter drapePlotter = new DrapePlotter(Weave);
+                    PlotterTemplate drapePlotter = new DrapePlotter(Weave);
                     drapePlotter.Plot(e.Graphics); break;
 
                 default: break;

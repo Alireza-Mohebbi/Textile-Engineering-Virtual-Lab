@@ -2,7 +2,7 @@
 
 namespace TextileEngineeringVirtualLaboratory.Plotter
 {
-    public abstract class AbstractPlotter
+    public abstract class PlotterTemplate
     {
         public const int axesRange = 30;
         public const int margin = 600;

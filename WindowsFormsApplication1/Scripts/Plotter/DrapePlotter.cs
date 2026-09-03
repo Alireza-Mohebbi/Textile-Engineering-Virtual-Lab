@@ -6,7 +6,7 @@ using TextileEngineeringVirtualLaboratory.Textiles;
 
 namespace TextileEngineeringVirtualLaboratory.Plotter
 {
-    public partial class DrapePlotter : AbstractPlotter
+    public partial class DrapePlotter : PlotterTemplate
     {
         private Weave weave;
         private float bendingRigidity;          // (N/mm^2)

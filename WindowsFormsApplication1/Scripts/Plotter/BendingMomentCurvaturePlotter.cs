@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TextileEngineeringVirtualLaboratory.Plotter
 {
-    public partial class BendingMomentCurvaturePlotter : AbstractPlotter
+    public partial class BendingMomentCurvaturePlotter : PlotterTemplate
     {
         private float moment1, moment2;         // (N.mm)
         private float curvature1, curvature2;   // (mm^-1)
