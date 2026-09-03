@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using WindowsFormsApplication1.Textiles;
+using TextileEngineeringVirtualLaboratory.Textiles;
 
-namespace WindowsFormsApplication1.Forms
+namespace TextileEngineeringVirtualLaboratory.Forms
 {
     public partial class WeavePropertiesConfigurer : Form
     {

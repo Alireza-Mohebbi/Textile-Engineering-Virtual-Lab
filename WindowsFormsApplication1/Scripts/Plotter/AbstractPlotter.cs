@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace WindowsFormsApplication1.Plotter
+namespace TextileEngineeringVirtualLaboratory.Plotter
 {
     public abstract class AbstractPlotter
     {

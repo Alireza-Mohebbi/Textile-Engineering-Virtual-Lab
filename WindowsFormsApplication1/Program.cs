@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowsFormsApplication1.MainMenu());
+            Application.Run(new TextileEngineeringVirtualLaboratory.MainMenu());
         }
     }
 }

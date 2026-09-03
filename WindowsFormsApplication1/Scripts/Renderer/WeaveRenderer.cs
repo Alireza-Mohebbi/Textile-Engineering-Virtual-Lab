@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using WindowsFormsApplication1.Textiles;
+using TextileEngineeringVirtualLaboratory.Textiles;
 
-namespace WindowsFormsApplication1.Renderer
+namespace TextileEngineeringVirtualLaboratory.Renderer
 {
     public class WeaveRenderer
     {

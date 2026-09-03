@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1.Textiles
+﻿namespace TextileEngineeringVirtualLaboratory.Textiles
 {
     public class Weave
     {

@@ -2,10 +2,10 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using WindowsFormsApplication1.Renderer;
-using WindowsFormsApplication1.Textiles;
+using TextileEngineeringVirtualLaboratory.Renderer;
+using TextileEngineeringVirtualLaboratory.Textiles;
 
-namespace WindowsFormsApplication1
+namespace TextileEngineeringVirtualLaboratory
 {
     public partial class WeaveDesigner : Form
     {

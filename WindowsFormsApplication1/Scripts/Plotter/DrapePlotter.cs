@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using WindowsFormsApplication1.Textiles;
+using TextileEngineeringVirtualLaboratory.Textiles;
 
-namespace WindowsFormsApplication1.Plotter
+namespace TextileEngineeringVirtualLaboratory.Plotter
 {
     public partial class DrapePlotter : AbstractPlotter
     {

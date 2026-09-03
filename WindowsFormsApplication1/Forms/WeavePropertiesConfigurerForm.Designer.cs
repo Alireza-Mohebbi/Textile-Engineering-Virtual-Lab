@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1.Forms
+﻿namespace TextileEngineeringVirtualLaboratory.Forms
 {
     partial class WeavePropertiesConfigurer
     {

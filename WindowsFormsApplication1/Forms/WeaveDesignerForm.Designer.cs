@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace TextileEngineeringVirtualLaboratory
 {
     partial class WeaveDesigner
     {

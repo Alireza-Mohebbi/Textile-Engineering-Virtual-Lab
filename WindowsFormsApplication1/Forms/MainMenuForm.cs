@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using WindowsFormsApplication1.Forms;
-using WindowsFormsApplication1.Plotter;
-using WindowsFormsApplication1.Renderer;
-using WindowsFormsApplication1.Textiles;
+using TextileEngineeringVirtualLaboratory.Forms;
+using TextileEngineeringVirtualLaboratory.Plotter;
+using TextileEngineeringVirtualLaboratory.Renderer;
+using TextileEngineeringVirtualLaboratory.Textiles;
 
 
-namespace WindowsFormsApplication1
+namespace TextileEngineeringVirtualLaboratory
 {
     public partial class MainMenu : Form
     {

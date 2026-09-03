@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace TextileEngineeringVirtualLaboratory
 {
     partial class MainMenu
     {
@@ -98,11 +98,11 @@
             this.weaveViewLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.weaveViewLabel.AutoSize = true;
             this.weaveViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaveViewLabel.Location = new System.Drawing.Point(28, 348);
+            this.weaveViewLabel.Location = new System.Drawing.Point(24, 348);
             this.weaveViewLabel.Name = "weaveViewLabel";
-            this.weaveViewLabel.Size = new System.Drawing.Size(68, 13);
+            this.weaveViewLabel.Size = new System.Drawing.Size(77, 13);
             this.weaveViewLabel.TabIndex = 13;
-            this.weaveViewLabel.Text = "Weave View";
+            this.weaveViewLabel.Text = "Weave Viewer";
             // 
             // weaveViewer
             // 
@@ -167,7 +167,7 @@
             // 
             // plotInputsGroupBox
             // 
-            this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.plotInputsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.plotInputsGroupBox.Controls.Add(this.input1);
             this.plotInputsGroupBox.Controls.Add(this.input2);
